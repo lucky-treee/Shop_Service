@@ -8,6 +8,6 @@ spring:
   cloud:
     config:
       name: mysql, eureka, actuator
-      profile: local
+      profile: develop
 server:
   port: 10300
