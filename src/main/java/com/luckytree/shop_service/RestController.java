@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @org.springframework.web.bind.annotation.RestController
-@RequestMapping("/member")
+@RequestMapping("/shop")
 public class RestController {
 
-    @GetMapping("/internal-test")
+    @GetMapping("/shop-test")
     String call(String name) {
         return "yeah!";
     }
