@@ -1,4 +1,4 @@
-package com.luckytree.shop_service;
+package com.luckytree.shop_service.common.dto;
 
 import jakarta.annotation.Nullable;
 import lombok.Data;
