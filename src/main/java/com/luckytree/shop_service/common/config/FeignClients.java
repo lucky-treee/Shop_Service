@@ -1,4 +1,4 @@
-package com.luckytree.shop_service.config;
+package com.luckytree.shop_service.common.config;
 
 
 import org.springframework.cloud.openfeign.FeignClient;
