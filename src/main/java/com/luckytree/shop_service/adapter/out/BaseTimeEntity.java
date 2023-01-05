@@ -1,4 +1,4 @@
-package com.luckytree.shop_service.domain;
+package com.luckytree.shop_service.adapter.out;
 
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;

@@ -1,32 +1,51 @@
 package com.luckytree.shop_service.domain;
 
-import jakarta.persistence.*;
+import com.luckytree.shop_service.adapter.out.BaseTimeEntity;
+import com.luckytree.shop_service.adapter.out.ShopListEntity;
+import com.luckytree.shop_service.application.port.in.RequestShopRegistration;
+import lombok.Getter;
 
-@Table(name = "shop_list")
-@Entity
+@Getter
 public class ShopList extends BaseTimeEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
-    @Column(length = 20, nullable = false)
-    private String shopDetailId;
-
-    @Column(length = 50, nullable = false)
+    private Long id;
+    private Long shopDetailId;
     private String name;
-
-    @Column(length = 10, nullable = false)
-    private String status;
-
-    private double mapX;
-
-    private double mapY;
-
-    @Column(length = 50)
+    private ShopStatus status;
+    private Double mapX;
+    private Double mapY;
     private String category;
+    private Hashtag hashtag;
 
-    @Column(length = 50)
-    private String hashtag;
+    public ShopList(Long id, Long shopDetailId, String name, ShopStatus status, Double mapX, Double mapY, String category, Hashtag hashtag) {
+        this.id = id;
+        this.shopDetailId = shopDetailId;
+        this.name = name;
+        this.status = status;
+        this.mapX = mapX;
+        this.mapY = mapY;
+        this.category = category;
+        this.hashtag = hashtag;
+    }
 
+    public ShopList(RequestShopRegistration requestShopRegistration, Long shopDetailId, ShopStatus status) {
+        this.shopDetailId = shopDetailId;
+        this.name = requestShopRegistration.getShopName();
+        this.status = status;
+        this.mapX = requestShopRegistration.getMapX();
+        this.mapY = requestShopRegistration.getMapY();
+        this.category = requestShopRegistration.getCategory();
+    }
+
+    public ShopListEntity toEntity() {
+        return ShopListEntity.builder()
+                .hashtag(this.hashtag)
+                .shopDetailId(this.shopDetailId)
+                .category(this.category)
+                .mapX(this.mapX)
+                .mapY(this.mapY)
+                .name(this.name)
+                .status(this.status)
+                .build();
+    }
 }
