@@ -23,8 +23,10 @@ public class ShopListEntity extends BaseTimeEntity {
     @Column(length = 10, nullable = false)
     private ShopStatus status;
 
+    @Column(name = "map_x")
     private Double mapX;
 
+    @Column(name = "map_y")
     private Double mapY;
 
     @Column(length = 50)
