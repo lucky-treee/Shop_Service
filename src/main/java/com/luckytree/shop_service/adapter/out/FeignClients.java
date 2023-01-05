@@ -1,6 +1,7 @@
-package com.luckytree.shop_service.common.config;
+package com.luckytree.shop_service.adapter.out;
 
 
+import com.luckytree.shop_service.common.config.FeignClientConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

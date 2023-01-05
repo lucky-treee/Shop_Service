@@ -1,4 +1,4 @@
-package com.luckytree.shop_service;
+package com.luckytree.shop_service.common.config;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
