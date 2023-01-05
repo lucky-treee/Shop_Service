@@ -2,6 +2,7 @@ package com.luckytree.shop_service.shop.application.port.in;
 
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -42,9 +43,9 @@ public class RequestShopRegistration {
     @Size(max = 50)
     private String sns;
 
-    @NotBlank
+    @NotNull
     private double mapX;
 
-    @NotBlank
+    @NotNull
     private double mapY;
 }
