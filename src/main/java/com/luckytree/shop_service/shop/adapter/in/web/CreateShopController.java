@@ -1,4 +1,4 @@
-package com.luckytree.shop_service.shop.adapter.in;
+package com.luckytree.shop_service.shop.adapter.in.web;
 
 import com.luckytree.shop_service.shop.application.port.in.CreateShopUseCase;
 import com.luckytree.shop_service.shop.application.port.in.RequestShopRegistration;
