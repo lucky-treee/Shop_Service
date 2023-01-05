@@ -1,8 +1,8 @@
-package com.luckytree.shop_service.domain;
+package com.luckytree.shop_service.shop.domain;
 
-import com.luckytree.shop_service.adapter.out.BaseTimeEntity;
-import com.luckytree.shop_service.adapter.out.ShopListEntity;
-import com.luckytree.shop_service.application.port.in.RequestShopRegistration;
+import com.luckytree.shop_service.shop.adapter.out.BaseTimeEntity;
+import com.luckytree.shop_service.shop.adapter.out.ShopListEntity;
+import com.luckytree.shop_service.shop.application.port.in.RequestShopRegistration;
 import lombok.Getter;
 
 @Getter

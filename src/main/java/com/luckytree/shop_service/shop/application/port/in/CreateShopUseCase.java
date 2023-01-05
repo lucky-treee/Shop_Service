@@ -1,6 +1,4 @@
-package com.luckytree.shop_service.application.port.in;
-
-import com.luckytree.shop_service.common.dto.ResultResponse;
+package com.luckytree.shop_service.shop.application.port.in;
 
 public interface CreateShopUseCase {
     void requestShopRegistration(RequestShopRegistration requestShopRegistration);

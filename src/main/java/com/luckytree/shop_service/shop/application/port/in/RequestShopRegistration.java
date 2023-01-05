@@ -1,4 +1,4 @@
-package com.luckytree.shop_service.application.port.in;
+package com.luckytree.shop_service.shop.application.port.in;
 
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;

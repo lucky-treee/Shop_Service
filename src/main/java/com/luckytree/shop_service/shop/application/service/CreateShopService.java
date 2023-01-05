@@ -1,11 +1,11 @@
-package com.luckytree.shop_service.application.service;
+package com.luckytree.shop_service.shop.application.service;
 
-import com.luckytree.shop_service.application.port.in.CreateShopUseCase;
-import com.luckytree.shop_service.application.port.in.RequestShopRegistration;
-import com.luckytree.shop_service.application.port.out.CreateShopPort;
-import com.luckytree.shop_service.domain.ShopDetail;
-import com.luckytree.shop_service.domain.ShopList;
-import com.luckytree.shop_service.domain.ShopStatus;
+import com.luckytree.shop_service.shop.application.port.in.CreateShopUseCase;
+import com.luckytree.shop_service.shop.application.port.in.RequestShopRegistration;
+import com.luckytree.shop_service.shop.application.port.out.CreateShopPort;
+import com.luckytree.shop_service.shop.domain.ShopDetail;
+import com.luckytree.shop_service.shop.domain.ShopList;
+import com.luckytree.shop_service.shop.domain.ShopStatus;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

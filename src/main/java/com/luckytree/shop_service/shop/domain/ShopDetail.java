@@ -1,8 +1,7 @@
-package com.luckytree.shop_service.domain;
+package com.luckytree.shop_service.shop.domain;
 
-import com.luckytree.shop_service.adapter.out.ShopDetailEntity;
-import com.luckytree.shop_service.application.port.in.RequestShopRegistration;
-import jakarta.persistence.*;
+import com.luckytree.shop_service.shop.adapter.out.ShopDetailEntity;
+import com.luckytree.shop_service.shop.application.port.in.RequestShopRegistration;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

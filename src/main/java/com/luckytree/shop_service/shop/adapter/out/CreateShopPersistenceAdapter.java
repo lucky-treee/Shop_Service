@@ -1,6 +1,6 @@
-package com.luckytree.shop_service.adapter.out;
+package com.luckytree.shop_service.shop.adapter.out;
 
-import com.luckytree.shop_service.application.port.out.CreateShopPort;
+import com.luckytree.shop_service.shop.application.port.out.CreateShopPort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

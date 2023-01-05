@@ -1,6 +1,5 @@
-package com.luckytree.shop_service.adapter.out;
+package com.luckytree.shop_service.shop.adapter.out;
 
-import com.luckytree.shop_service.domain.ShopDetail;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

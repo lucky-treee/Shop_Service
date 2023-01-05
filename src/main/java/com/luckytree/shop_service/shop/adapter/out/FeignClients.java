@@ -1,4 +1,4 @@
-package com.luckytree.shop_service.adapter.out;
+package com.luckytree.shop_service.shop.adapter.out;
 
 
 import com.luckytree.shop_service.common.config.FeignClientConfig;

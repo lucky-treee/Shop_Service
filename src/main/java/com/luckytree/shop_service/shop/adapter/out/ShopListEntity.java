@@ -1,7 +1,7 @@
-package com.luckytree.shop_service.adapter.out;
+package com.luckytree.shop_service.shop.adapter.out;
 
-import com.luckytree.shop_service.domain.Hashtag;
-import com.luckytree.shop_service.domain.ShopStatus;
+import com.luckytree.shop_service.shop.domain.Hashtag;
+import com.luckytree.shop_service.shop.domain.ShopStatus;
 import jakarta.persistence.*;
 import lombok.Builder;
 
