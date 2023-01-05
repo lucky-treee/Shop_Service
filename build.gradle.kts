@@ -26,18 +26,20 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("io.micrometer:micrometer-tracing-bridge-brave")
-	implementation("io.zipkin.reporter2:zipkin-reporter-brave")
+	//implementation("io.zipkin.reporter2:zipkin-reporter-brave")
 	//implementation("org.flywaydb:flyway-core")
 	//implementation("org.flywaydb:flyway-mysql")
 	implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j")
 	implementation("org.springframework.cloud:spring-cloud-starter-config")
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 	implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.0")
 	compileOnly("org.projectlombok:lombok")
 	runtimeOnly("com.mysql:mysql-connector-j")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
 }
 
 dependencyManagement {
