@@ -7,7 +7,7 @@ spring:
     import: "optional:configserver:http://localhost:8888/"
   cloud:
     config:
-      name: mysql, eureka, actuator
+      name: eureka, actuator, shopService
       profile: develop
 server:
   port: 10300
