@@ -13,7 +13,7 @@ public class SwaggerConfig{
 
     public OpenAPI openAPI(@Value("${springdoc.version}") String springdocVersion) {
         Info info = new Info()
-                .title("타이틀 입력")
+                .title("test")
                 .version(springdocVersion)
                 .description("API에 대한 설명 부분");
 
