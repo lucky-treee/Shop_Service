@@ -1,4 +1,4 @@
-package com.luckytree.shop_service.shop.adapter.out;
+package com.luckytree.shop_service.shop.adapter.out.persistence;
 
 import com.luckytree.shop_service.shop.application.port.out.CreateShopPort;
 import lombok.RequiredArgsConstructor;

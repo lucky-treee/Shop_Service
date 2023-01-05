@@ -1,6 +1,6 @@
 package com.luckytree.shop_service.shop.domain;
 
-import com.luckytree.shop_service.shop.adapter.out.ShopDetailEntity;
+import com.luckytree.shop_service.shop.adapter.out.persistence.ShopDetailEntity;
 import com.luckytree.shop_service.shop.application.port.in.RequestShopRegistration;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

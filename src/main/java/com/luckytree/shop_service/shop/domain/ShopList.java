@@ -1,7 +1,7 @@
 package com.luckytree.shop_service.shop.domain;
 
-import com.luckytree.shop_service.shop.adapter.out.BaseTimeEntity;
-import com.luckytree.shop_service.shop.adapter.out.ShopListEntity;
+import com.luckytree.shop_service.shop.adapter.out.persistence.BaseTimeEntity;
+import com.luckytree.shop_service.shop.adapter.out.persistence.ShopListEntity;
 import com.luckytree.shop_service.shop.application.port.in.RequestShopRegistration;
 import lombok.Getter;
 
