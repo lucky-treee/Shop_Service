@@ -28,6 +28,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("io.micrometer:micrometer-tracing-bridge-brave")
 	implementation("io.zipkin.reporter2:zipkin-reporter-brave")
+	implementation("com.github.maricn:logback-slack-appender:1.4.0")
 	//implementation("org.flywaydb:flyway-core")
 	//implementation("org.flywaydb:flyway-mysql")
 	implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j")
