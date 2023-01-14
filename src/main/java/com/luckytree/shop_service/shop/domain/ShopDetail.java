@@ -47,19 +47,4 @@ public class ShopDetail {
         this.operatingTime = requestShopRegistration.getOperatingTime();
         this.sns = requestShopRegistration.getSns();
     }
-
-    public ShopDetailEntity toEntity() {
-        return ShopDetailEntity.builder()
-                .address(this.address)
-                .category(this.category)
-                .contact(this.contact)
-                .flagshipProduct(this.flagshipProduct)
-                .hashtag(this.hashtag)
-                .homepage(this.homepage)
-                .name(this.name)
-                .operatingTime(this.operatingTime)
-                .sns(this.sns)
-                .photo(this.photo)
-                .build();
-    }
 }
