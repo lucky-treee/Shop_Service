@@ -36,16 +36,4 @@ public class ShopList extends BaseTimeEntity {
         this.mapY = requestShopRegistration.getMapY();
         this.category = requestShopRegistration.getCategory();
     }
-
-    public ShopListEntity toEntity() {
-        return ShopListEntity.builder()
-                .hashtag(this.hashtag)
-                .shopDetailId(this.shopDetailId)
-                .category(this.category)
-                .mapX(this.mapX)
-                .mapY(this.mapY)
-                .name(this.name)
-                .status(this.status)
-                .build();
-    }
 }
