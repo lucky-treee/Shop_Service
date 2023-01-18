@@ -8,7 +8,7 @@ spring:
   cloud:
     config:
       name: eureka, actuator, shopService
-      label: main
+      label: develop
       profile: develop
 server:
   port: 10300
