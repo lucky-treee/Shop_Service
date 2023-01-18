@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface GetShopPort {
 
-     List<ShopList> getShopListByCategory(String category);  // ShopList Type으로 반환.
+     List<ShopList> getShopListByCategory(String category);
 }
