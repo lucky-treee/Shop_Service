@@ -25,4 +25,10 @@ public class ResultResponse<T> {
     public ResultResponse(HttpStatus httpStatus) {
         this.status = httpStatus.value();
     }
+
+    public ResultResponse(int code, String message) {
+        this.status = HttpStatus.OK.value();
+        this.code = code;
+        this.message = message;
+    }
 }
