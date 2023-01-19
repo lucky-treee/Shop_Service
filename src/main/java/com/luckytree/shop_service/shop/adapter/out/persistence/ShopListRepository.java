@@ -10,4 +10,6 @@ import java.util.List;
 public interface ShopListRepository extends JpaRepository<ShopListEntity, Long> {
 
     List<ShopList> findByCategory(String category);
+
+    List<ShopListEntity> findAll();
 }

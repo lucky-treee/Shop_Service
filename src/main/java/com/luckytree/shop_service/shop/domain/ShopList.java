@@ -3,6 +3,7 @@ package com.luckytree.shop_service.shop.domain;
 import com.luckytree.shop_service.shop.adapter.out.persistence.BaseTimeEntity;
 import com.luckytree.shop_service.shop.adapter.out.persistence.ShopListEntity;
 import com.luckytree.shop_service.shop.application.port.in.RequestShopRegistration;
+import lombok.Builder;
 import lombok.Getter;
 
 @Getter
@@ -17,6 +18,7 @@ public class ShopList extends BaseTimeEntity {
     private String category;
     private Hashtag hashtag;
 
+    @Builder
     public ShopList(Long id, Long shopDetailId, String name, ShopStatus status, Double mapX, Double mapY, String category, Hashtag hashtag) {
         this.id = id;
         this.shopDetailId = shopDetailId;

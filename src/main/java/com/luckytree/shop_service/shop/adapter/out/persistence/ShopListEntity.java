@@ -58,4 +58,17 @@ public class ShopListEntity extends BaseTimeEntity {
         this.category = shopList.getCategory();
         this.hashtag = shopList.getHashtag();
     }
+
+    public ShopList toDomain() {
+        return ShopList.builder()
+                .id(id)
+                .shopDetailId(shopDetailId)
+                .name(name)
+                .status(status)
+                .mapX(mapX)
+                .mapY(mapY)
+                .category(category)
+                .hashtag(hashtag)
+                .build();
+    }
 }

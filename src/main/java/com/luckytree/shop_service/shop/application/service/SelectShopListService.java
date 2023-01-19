@@ -1,6 +1,5 @@
 package com.luckytree.shop_service.shop.application.service;
 
-import com.luckytree.shop_service.shop.application.port.in.RequestShopListSelect;
 import com.luckytree.shop_service.shop.application.port.in.SelectShopListUseCase;
 import com.luckytree.shop_service.shop.application.port.out.SelectShopListPort;
 import com.luckytree.shop_service.shop.domain.ShopList;
@@ -18,7 +17,7 @@ public class SelectShopListService implements SelectShopListUseCase {
 
     @Transactional(readOnly = true)
     @Override
-    public List<ShopList> requestShopListSelect(RequestShopListSelect requestShopListSelect) {
-        return selectShopListPort.requestShopListSelect(requestShopListSelect);
+    public List<ShopList> requestShopListSelect() {
+        return selectShopListPort.requestShopListSelect();
     }
 }

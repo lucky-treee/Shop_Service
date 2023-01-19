@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface SelectShopListUseCase {
 
-    List<ShopList> requestShopListSelect(RequestShopListSelect requestShopListSelect);
+    List<ShopList> requestShopListSelect();
 }
