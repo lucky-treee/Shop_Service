@@ -1,7 +1,7 @@
 package com.luckytree.shop_service.shop.application.service;
 
 import com.luckytree.shop_service.shop.application.port.in.CreateShopUseCase;
-import com.luckytree.shop_service.shop.application.port.in.RequestShopRegistration;
+import com.luckytree.shop_service.shop.domain.ShopRequest;
 import com.luckytree.shop_service.shop.application.port.out.CreateShopPort;
 import com.luckytree.shop_service.shop.domain.ShopDetail;
 import com.luckytree.shop_service.shop.domain.ShopSummary;
@@ -18,12 +18,8 @@ public class CreateShopService implements CreateShopUseCase {
 
     @Transactional
     @Override
-    public void requestShopRegistration(RequestShopRegistration requestShopRegistration) {
-        ShopDetail shopDetail = new ShopDetail(requestShopRegistration);
-        Long shopDetailId = createShopPort.saveShopDetail(shopDetail);
-
-        ShopSummary shopSummary = new ShopSummary(requestShopRegistration, shopDetailId, ShopStatus.DISABLE);
-        createShopPort.saveShopList(shopSummary);
+    public void requestShopRegistration(ShopRequest shopRequest) {
+        createShopPort.saveShopWithDisable(shopRequest);
     }
 
 }

@@ -1,6 +1,7 @@
 package com.luckytree.shop_service.shop.adapter.out.persistence;
 
 import com.luckytree.shop_service.shop.domain.Hashtag;
+import com.luckytree.shop_service.shop.domain.ShopRequest;
 import com.luckytree.shop_service.shop.domain.ShopStatus;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -69,4 +70,21 @@ public class ShopEntity extends BaseTimeEntity {
 
     @OneToMany(mappedBy = "shopEntity")
     private List<ShopTempEntity> shopTempEntityList;
+
+    public ShopEntity(ShopRequest shopRequest) {
+        this.name = shopRequest.getShopName();
+        this.category = shopRequest.getCategory();
+        this.status = ShopStatus.DISABLE;
+        this.address = shopRequest.getAddress();
+        this.mapX = shopRequest.getMapX();
+        this.mapY = shopRequest.getMapY();
+        this.photo = shopRequest.getPhoto();
+        this.contact = shopRequest.getContact();
+        this.sns = shopRequest.getSns();
+        this.homepage = shopRequest.getHomepage();
+        this.flagshipProduct = shopRequest.getFlagshipProduct();
+        this.operatingStart = shopRequest.getOperatingStart();
+        this.operatingEnd = shopRequest.getOperatingEnd();
+        this.holiday = shopRequest.getHoliday();
+    }
 }

@@ -1,7 +1,7 @@
 package com.luckytree.shop_service.shop.adapter.in.web;
 
 import com.luckytree.shop_service.shop.application.port.in.CreateShopUseCase;
-import com.luckytree.shop_service.shop.application.port.in.RequestShopRegistration;
+import com.luckytree.shop_service.shop.domain.ShopRequest;
 import com.luckytree.shop_service.common.dto.ResultResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -23,8 +23,8 @@ public class CreateShopController {
 
     @Operation(summary = "샵 등록요청 API")
     @PostMapping("/request")
-    public ResultResponse requestShopRegistration(@RequestBody @Valid RequestShopRegistration requestShopRegistration) {
-        createShopUseCase.requestShopRegistration(requestShopRegistration);
+    public ResultResponse requestShopRegistration(@RequestBody @Valid ShopRequest shopRequest) {
+        createShopUseCase.requestShopRegistration(shopRequest);
         return new ResultResponse<>(HttpStatus.OK);
     }
 }

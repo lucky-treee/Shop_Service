@@ -2,7 +2,6 @@ package com.luckytree.shop_service.shop.domain;
 
 import com.luckytree.shop_service.shop.adapter.out.persistence.BaseTimeEntity;
 import com.luckytree.shop_service.shop.adapter.out.persistence.ShopEntity;
-import com.luckytree.shop_service.shop.application.port.in.RequestShopRegistration;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -28,12 +27,12 @@ public class ShopSummary extends BaseTimeEntity {
         this.hashtag = hashtag;
     }
 
-    public ShopSummary(RequestShopRegistration requestShopRegistration, ShopStatus status) {
-        this.name = requestShopRegistration.getShopName();
+    public ShopSummary(ShopRequest shopRequest, ShopStatus status) {
+        this.name = shopRequest.getShopName();
         this.status = status;
-        this.mapX = requestShopRegistration.getMapX();
-        this.mapY = requestShopRegistration.getMapY();
-        this.category = requestShopRegistration.getCategory();
+        this.mapX = shopRequest.getMapX();
+        this.mapY = shopRequest.getMapY();
+        this.category = shopRequest.getCategory();
     }
 
     public ShopSummary(ShopEntity shopEntity) {

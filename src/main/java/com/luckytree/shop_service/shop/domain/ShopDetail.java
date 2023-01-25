@@ -1,7 +1,5 @@
 package com.luckytree.shop_service.shop.domain;
 
-import com.luckytree.shop_service.shop.adapter.out.persistence.ShopDetailEntity;
-import com.luckytree.shop_service.shop.application.port.in.RequestShopRegistration;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -36,15 +34,15 @@ public class ShopDetail {
         this.sns = sns;
     }
 
-    public ShopDetail(RequestShopRegistration requestShopRegistration) {
-        this.name = requestShopRegistration.getShopName();
-        this.category = requestShopRegistration.getCategory();
-        this.address = requestShopRegistration.getAddress();
-        this.photo = requestShopRegistration.getPhoto();
-        this.contact = requestShopRegistration.getContact();
-        this.homepage = requestShopRegistration.getHomepage();
-        this.flagshipProduct = requestShopRegistration.getFlagshipProduct();
-        this.operatingTime = requestShopRegistration.getOperatingTime();
-        this.sns = requestShopRegistration.getSns();
+    public ShopDetail(ShopRequest shopRequest) {
+        this.name = shopRequest.getShopName();
+        this.category = shopRequest.getCategory();
+        this.address = shopRequest.getAddress();
+        this.photo = shopRequest.getPhoto();
+        this.contact = shopRequest.getContact();
+        this.homepage = shopRequest.getHomepage();
+        this.flagshipProduct = shopRequest.getFlagshipProduct();
+        this.operatingTime = shopRequest.getOperatingTime();
+        this.sns = shopRequest.getSns();
     }
 }
