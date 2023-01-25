@@ -1,16 +1,15 @@
 package com.luckytree.shop_service.shop.domain;
 
 import com.luckytree.shop_service.shop.adapter.out.persistence.BaseTimeEntity;
-import com.luckytree.shop_service.shop.adapter.out.persistence.ShopListEntity;
+import com.luckytree.shop_service.shop.adapter.out.persistence.ShopEntity;
 import com.luckytree.shop_service.shop.application.port.in.RequestShopRegistration;
 import lombok.Builder;
 import lombok.Getter;
 
 @Getter
-public class ShopList extends BaseTimeEntity {
+public class ShopSummary extends BaseTimeEntity {
 
     private Long id;
-    private Long shopDetailId;
     private String name;
     private ShopStatus status;
     private Double mapX;
@@ -19,9 +18,8 @@ public class ShopList extends BaseTimeEntity {
     private Hashtag hashtag;
 
     @Builder
-    public ShopList(Long id, Long shopDetailId, String name, ShopStatus status, Double mapX, Double mapY, String category, Hashtag hashtag) {
+    public ShopSummary(Long id, String name, ShopStatus status, Double mapX, Double mapY, String category, Hashtag hashtag) {
         this.id = id;
-        this.shopDetailId = shopDetailId;
         this.name = name;
         this.status = status;
         this.mapX = mapX;
@@ -30,12 +28,21 @@ public class ShopList extends BaseTimeEntity {
         this.hashtag = hashtag;
     }
 
-    public ShopList(RequestShopRegistration requestShopRegistration, Long shopDetailId, ShopStatus status) {
-        this.shopDetailId = shopDetailId;
+    public ShopSummary(RequestShopRegistration requestShopRegistration, ShopStatus status) {
         this.name = requestShopRegistration.getShopName();
         this.status = status;
         this.mapX = requestShopRegistration.getMapX();
         this.mapY = requestShopRegistration.getMapY();
         this.category = requestShopRegistration.getCategory();
+    }
+
+    public ShopSummary(ShopEntity shopEntity) {
+        this.id = shopEntity.getId();
+        this.name = shopEntity.getName();
+        this.status = shopEntity.getStatus();
+        this.mapX = shopEntity.getMapX();
+        this.mapY = shopEntity.getMapY();
+        this.category = shopEntity.getCategory();
+        this.hashtag = shopEntity.getHashtag();
     }
 }

@@ -2,7 +2,7 @@ package com.luckytree.shop_service.shop.adapter.out.persistence;
 
 import com.luckytree.shop_service.shop.application.port.out.CreateShopPort;
 import com.luckytree.shop_service.shop.domain.ShopDetail;
-import com.luckytree.shop_service.shop.domain.ShopList;
+import com.luckytree.shop_service.shop.domain.ShopSummary;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -19,7 +19,7 @@ public class CreateShopPersistenceAdapter implements CreateShopPort {
     }
 
     @Override
-    public void saveShopList(ShopList shopList) {
-        shopListRepository.save(new ShopListEntity(shopList));
+    public void saveShopList(ShopSummary shopSummary) {
+        shopListRepository.save(new ShopListEntity(shopSummary));
     }
 }
