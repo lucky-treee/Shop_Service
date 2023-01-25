@@ -1,10 +1,12 @@
 package com.luckytree.shop_service.shop.application.port.out;
 
-import com.luckytree.shop_service.shop.domain.ShopList;
+import com.luckytree.shop_service.shop.domain.ShopSummary;
 
 import java.util.List;
 
 public interface GetShopPort {
 
-     List<ShopList> getShopListByCategory(String category);
+     List<ShopSummary> getShopSummaryByCategory(String category);
+
+     List<ShopSummary> getShopAll();
 }

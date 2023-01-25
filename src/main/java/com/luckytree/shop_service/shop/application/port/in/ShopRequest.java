@@ -1,6 +1,8 @@
 package com.luckytree.shop_service.shop.application.port.in;
 
-import jakarta.persistence.Column;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalTimeDeserializer;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -8,10 +10,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
-public class RequestShopRegistration {
+public class ShopRequest {
 
     @NotBlank
     @Size(max = 50)
@@ -48,4 +52,13 @@ public class RequestShopRegistration {
 
     @NotNull
     private double mapY;
+
+    @JsonDeserialize(using = LocalTimeDeserializer.class)
+    private LocalTime operatingStart;
+
+    @JsonDeserialize(using = LocalTimeDeserializer.class)
+    private LocalTime operatingEnd;
+
+    @Size(max = 20)
+    private String holiday;
 }
