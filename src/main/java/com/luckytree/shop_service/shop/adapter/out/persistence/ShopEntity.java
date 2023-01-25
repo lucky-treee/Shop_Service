@@ -1,7 +1,7 @@
 package com.luckytree.shop_service.shop.adapter.out.persistence;
 
 import com.luckytree.shop_service.shop.domain.Hashtag;
-import com.luckytree.shop_service.shop.domain.ShopRequest;
+import com.luckytree.shop_service.shop.application.port.in.ShopRequest;
 import com.luckytree.shop_service.shop.domain.ShopStatus;
 import jakarta.persistence.*;
 import lombok.AccessLevel;

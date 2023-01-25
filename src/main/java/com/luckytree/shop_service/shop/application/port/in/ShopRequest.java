@@ -1,4 +1,4 @@
-package com.luckytree.shop_service.shop.domain;
+package com.luckytree.shop_service.shop.application.port.in;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

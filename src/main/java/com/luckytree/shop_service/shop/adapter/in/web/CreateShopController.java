@@ -1,7 +1,7 @@
 package com.luckytree.shop_service.shop.adapter.in.web;
 
 import com.luckytree.shop_service.shop.application.port.in.CreateShopUseCase;
-import com.luckytree.shop_service.shop.domain.ShopRequest;
+import com.luckytree.shop_service.shop.application.port.in.ShopRequest;
 import com.luckytree.shop_service.common.dto.ResultResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
