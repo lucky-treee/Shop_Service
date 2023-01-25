@@ -1,6 +1,7 @@
 package com.luckytree.shop_service.shop.adapter.out.persistence;
 
 import com.luckytree.shop_service.shop.application.port.out.GetShopPort;
+import com.luckytree.shop_service.shop.domain.ShopStatus;
 import com.luckytree.shop_service.shop.domain.ShopSummary;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -15,11 +16,11 @@ public class GetShopListPersistenceAdapter implements GetShopPort {
 
     @Override
     public List<ShopSummary> getShopSummaryByCategory(String category) {
-        return shopRepository.findByCategory(category).stream().map(ShopSummary::new).toList();
+        return shopRepository.findByCategoryAndStatus(category, ShopStatus.ENABLE).stream().map(ShopSummary::new).toList();
     }
 
     @Override
     public List<ShopSummary> getShopAll() {
-        return shopRepository.findAll().stream().map(ShopSummary::new).toList();
+        return shopRepository.findByStatus(ShopStatus.ENABLE).stream().map(ShopSummary::new).toList();
     }
 }
