@@ -21,7 +21,7 @@ public class ShopTempEntity extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "shop_id", nullable = false)
     private Long shopId;
 
     @Column(length = 50, nullable = false)
