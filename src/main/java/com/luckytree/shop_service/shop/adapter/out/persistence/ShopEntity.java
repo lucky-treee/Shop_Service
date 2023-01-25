@@ -14,7 +14,7 @@ import java.util.List;
 
 @Table(name = "shop")
 @Getter
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class ShopEntity extends BaseTimeEntity {

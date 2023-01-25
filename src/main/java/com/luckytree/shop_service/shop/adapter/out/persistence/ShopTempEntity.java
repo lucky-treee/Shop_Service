@@ -12,7 +12,7 @@ import java.time.LocalTime;
 
 @Table(name = "shop_temp")
 @Getter
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class ShopTempEntity extends BaseTimeEntity {
@@ -20,9 +20,6 @@ public class ShopTempEntity extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(name = "shop_id", nullable = false)
-    private Long shopId;
 
     @Column(length = 50, nullable = false)
     private String name;
