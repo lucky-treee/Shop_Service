@@ -23,7 +23,7 @@ public class GetShopListService implements GetShopListUseCase {
 
     @Transactional(readOnly = true)
     @Override
-    public List<ShopSummary> getShopAll() {
-        return getShopPort.getShopAll();
+    public List<ShopSummary> getShopAll(double maxLat, double minLat, double maxLng, double minLng) {
+        return getShopPort.getShopAll(maxLat, minLat, maxLng, minLng);
     }
 }

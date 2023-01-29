@@ -28,10 +28,10 @@ public class GetShopListController {
         return new ResultResponse<>(shopSummaryList);
     }
 
-    @Operation(summary = "모든 샵 검색")
-    @GetMapping("/all")
-    public ResultResponse getShopAll() {
-        List<ShopSummary> shopSummary = getShopListUseCase.getShopAll();
+    @Operation(summary = "범위 내 샵 전체 검색")
+    @GetMapping("/{maxLat}/{minLat}/{maxLng}/{minLng}")
+    public ResultResponse getShopAll(@PathVariable("maxLat") double maxLat, @PathVariable("minLat") double minLat, @PathVariable("maxLng") double maxLng, @PathVariable("minLng") double minLng) {
+        List<ShopSummary> shopSummary = getShopListUseCase.getShopAll(maxLat, minLat, maxLng, minLng);
         return new ResultResponse<>(shopSummary);
     }
 }

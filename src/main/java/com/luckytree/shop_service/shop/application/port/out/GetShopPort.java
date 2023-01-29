@@ -8,5 +8,5 @@ public interface GetShopPort {
 
      List<ShopSummary> getShopSummaryByCategory(String category);
 
-     List<ShopSummary> getShopAll();
+     List<ShopSummary> getShopAll(double maxLat, double minLat, double maxLng, double minLng);
 }
