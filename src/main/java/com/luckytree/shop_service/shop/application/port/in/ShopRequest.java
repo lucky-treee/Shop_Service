@@ -1,6 +1,5 @@
 package com.luckytree.shop_service.shop.application.port.in;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalTimeDeserializer;
 import jakarta.validation.constraints.NotBlank;
@@ -48,10 +47,10 @@ public class ShopRequest {
     private String sns;
 
     @NotNull
-    private double mapX;
+    private double lat;
 
     @NotNull
-    private double mapY;
+    private double lng;
 
     @JsonDeserialize(using = LocalTimeDeserializer.class)
     private LocalTime operatingStart;

@@ -35,11 +35,11 @@ public class ShopEntity extends BaseTimeEntity {
     @Column(length = 50, nullable = false)
     private String address;
 
-    @Column(name = "map_x", nullable = false)
-    private Double mapX;
+    @Column(nullable = false)
+    private double lat;
 
-    @Column(name = "map_y", nullable = false)
-    private Double mapY;
+    @Column(nullable = false)
+    private double lng;
 
     @Column(length = 50)
     private Hashtag hashtag;
@@ -76,8 +76,8 @@ public class ShopEntity extends BaseTimeEntity {
         this.category = shopRequest.getCategory();
         this.status = ShopStatus.DISABLE;
         this.address = shopRequest.getAddress();
-        this.mapX = shopRequest.getMapX();
-        this.mapY = shopRequest.getMapY();
+        this.lat = shopRequest.getLat();
+        this.lng = shopRequest.getLng();
         this.photo = shopRequest.getPhoto();
         this.contact = shopRequest.getContact();
         this.sns = shopRequest.getSns();

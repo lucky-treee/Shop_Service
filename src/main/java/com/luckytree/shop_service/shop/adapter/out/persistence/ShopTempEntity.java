@@ -1,7 +1,6 @@
 package com.luckytree.shop_service.shop.adapter.out.persistence;
 
 import com.luckytree.shop_service.shop.domain.Hashtag;
-import com.luckytree.shop_service.shop.domain.ShopStatus;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -30,11 +29,11 @@ public class ShopTempEntity extends BaseTimeEntity {
     @Column(length = 50, nullable = false)
     private String address;
 
-    @Column(name = "map_x", nullable = false)
-    private Double mapX;
+    @Column(nullable = false)
+    private Double lat;
 
-    @Column(name = "map_y", nullable = false)
-    private Double mapY;
+    @Column(nullable = false)
+    private Double lng;
 
     @Column(length = 50)
     private Hashtag hashtag;
