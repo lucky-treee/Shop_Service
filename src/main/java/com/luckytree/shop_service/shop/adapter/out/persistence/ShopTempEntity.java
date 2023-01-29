@@ -1,5 +1,6 @@
 package com.luckytree.shop_service.shop.adapter.out.persistence;
 
+import com.luckytree.shop_service.shop.application.port.in.ShopRequest;
 import com.luckytree.shop_service.shop.domain.Hashtag;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -20,6 +21,9 @@ public class ShopTempEntity extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name="shop_id", nullable = false)
+    private Long shopId;
+
     @Column(length = 50, nullable = false)
     private String name;
 
@@ -29,10 +33,10 @@ public class ShopTempEntity extends BaseTimeEntity {
     @Column(length = 50, nullable = false)
     private String address;
 
-    @Column(nullable = false)
+    @Column(name = "lat", nullable = false)
     private Double lat;
 
-    @Column(nullable = false)
+    @Column(name = "lng", nullable = false)
     private Double lng;
 
     @Column(length = 50)
@@ -65,4 +69,21 @@ public class ShopTempEntity extends BaseTimeEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "shop_id")
     private ShopEntity shopEntity;
+
+    public ShopTempEntity(ShopRequest shopRequest, Long shopId) {
+        this.shopId = shopId;
+        this.name = shopRequest.getShopName();
+        this.category = shopRequest.getCategory();
+        this.address = shopRequest.getAddress();
+        this.lat = shopRequest.getLat();
+        this.lng = shopRequest.getLng();
+        this.photo = shopRequest.getPhoto();
+        this.contact = shopRequest.getContact();
+        this.sns = shopRequest.getSns();
+        this.homepage = shopRequest.getHomepage();
+        this.flagshipProduct = shopRequest.getFlagshipProduct();
+        this.operatingStart = shopRequest.getOperatingStart();
+        this.operatingEnd = shopRequest.getOperatingEnd();
+        this.holiday = shopRequest.getHoliday();
+    }
 }

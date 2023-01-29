@@ -39,10 +39,6 @@ public class ShopRequest {
     @Size(max = 50)
     private String flagshipProduct;
 
-    @NotBlank
-    @Size(max = 50)
-    private String operatingTime;
-
     @Size(max = 50)
     private String sns;
 
