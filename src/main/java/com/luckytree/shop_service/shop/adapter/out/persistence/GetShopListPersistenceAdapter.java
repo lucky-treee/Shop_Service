@@ -20,7 +20,7 @@ public class GetShopListPersistenceAdapter implements GetShopPort {
     }
 
     @Override
-    public List<ShopSummary> getShopAll() {
-        return shopRepository.findByStatus(ShopStatus.ENABLE).stream().map(ShopSummary::new).toList();
+    public List<ShopSummary> getShopAll(double maxLat, double minLat, double maxLng, double minLng) {
+        return shopRepository.findByStatusAndLatLessThanEqualAndLatGreaterThanEqualAndLngLessThanEqualAndLngGreaterThanEqual(ShopStatus.ENABLE, maxLat, minLat, maxLng, minLng).stream().map(ShopSummary::new).toList();
     }
 }
