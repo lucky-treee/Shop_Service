@@ -2,14 +2,12 @@ package com.luckytree.shop_service.shop.adapter.in.web;
 
 import com.luckytree.shop_service.common.dto.ResultResponse;
 import com.luckytree.shop_service.shop.application.port.in.GetShopListUseCase;
+import com.luckytree.shop_service.shop.domain.Hashtag;
 import com.luckytree.shop_service.shop.domain.ShopSummary;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,5 +31,12 @@ public class GetShopListController {
     public ResultResponse getShopAll(@PathVariable("maxLat") double maxLat, @PathVariable("minLat") double minLat, @PathVariable("maxLng") double maxLng, @PathVariable("minLng") double minLng) {
         List<ShopSummary> shopSummary = getShopListUseCase.getShopAll(maxLat, minLat, maxLng, minLng);
         return new ResultResponse<>(shopSummary);
+    }
+
+    @Operation(summary = "특정 해쉬태크의 샵 상세정보 조회")
+    @GetMapping("/hashtag")
+    public ResultResponse getShopSummaryByHashtag(@RequestParam("hashtag") Hashtag hashtag) {
+        List<ShopSummary> shopSummaryList = getShopListUseCase.getShopSummaryByHashtag(hashtag);
+        return new ResultResponse<>(shopSummaryList);
     }
 }
