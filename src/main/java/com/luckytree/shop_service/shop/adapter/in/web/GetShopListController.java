@@ -1,6 +1,7 @@
 package com.luckytree.shop_service.shop.adapter.in.web;
 
 import com.luckytree.shop_service.common.dto.ResultResponse;
+import com.luckytree.shop_service.shop.adapter.out.persistence.ShopTempEntity;
 import com.luckytree.shop_service.shop.application.port.in.GetShopListUseCase;
 import com.luckytree.shop_service.shop.domain.ShopDetail;
 import com.luckytree.shop_service.shop.domain.ShopSummary;
@@ -37,9 +38,10 @@ public class GetShopListController {
     }
 
     @Operation(summary = "선택된 샵 상세정보 검색")
-    @GetMapping("/{shopId}")
-    public ResultResponse getShopDetail(@PathVariable("shopId") Long shopId) {
-        ShopDetail shopDetail = getShopListUseCase.getShopDetail(shopId);
+    @GetMapping("/getShopDetail/{id}")
+    public ResultResponse getShopDetail(@PathVariable("id") Long shopId) {
+        ShopTempEntity shopTempEntity = getShopListUseCase.getShopDetail(shopId);
+        ShopDetail shopDetail = new ShopDetail(shopTempEntity);
         return new ResultResponse<>(shopDetail);
     }
 }

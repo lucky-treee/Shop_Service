@@ -1,5 +1,6 @@
 package com.luckytree.shop_service.shop.application.service;
 
+import com.luckytree.shop_service.shop.adapter.out.persistence.ShopTempEntity;
 import com.luckytree.shop_service.shop.application.port.in.GetShopListUseCase;
 import com.luckytree.shop_service.shop.application.port.out.GetShopPort;
 import com.luckytree.shop_service.shop.domain.ShopDetail;
@@ -30,7 +31,7 @@ public class GetShopListService implements GetShopListUseCase {
 
     @Transactional
     @Override
-    public ShopDetail getShopDetail(Long shopId) {
-        return getShopPort.getShopDetail(shopId);
+    public ShopTempEntity getShopDetail(Long shopId) {
+        return getShopPort.getShopTempEntityById(shopId);
     }
 }

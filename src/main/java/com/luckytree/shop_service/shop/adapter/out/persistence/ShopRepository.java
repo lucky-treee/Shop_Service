@@ -1,6 +1,5 @@
 package com.luckytree.shop_service.shop.adapter.out.persistence;
 
-import com.luckytree.shop_service.shop.domain.ShopDetail;
 import com.luckytree.shop_service.shop.domain.ShopStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -12,5 +11,4 @@ public interface ShopRepository extends JpaRepository<ShopEntity, Long> {
 
     List<ShopEntity> findByStatusAndLatLessThanEqualAndLatGreaterThanEqualAndLngLessThanEqualAndLngGreaterThanEqual(ShopStatus shopStatus, double maxLat, double minLat, double maxLng, double minLng);
 
-    ShopDetail getShopDetail(Long ShopId);
 }

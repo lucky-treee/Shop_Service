@@ -8,12 +8,14 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Repository
 public class GetShopListPersistenceAdapter implements GetShopPort {
 
     private final ShopRepository shopRepository;
+    private final ShopTempRepository shopTempRepository;
 
     @Override
     public List<ShopSummary> getShopSummaryByCategory(String category) {
@@ -26,7 +28,8 @@ public class GetShopListPersistenceAdapter implements GetShopPort {
     }
 
     @Override
-    public ShopDetail getShopDetail(Long ShopId){
-        return shopRepository.getShopDetail(ShopId);
+    public ShopTempEntity getShopTempEntityById(Long shopId){
+        Optional<ShopTempEntity> shopTempEntity = shopTempRepository.findById(shopId);
+        return shopTempEntity.get();
     }
 }
