@@ -2,6 +2,7 @@ package com.luckytree.shop_service.shop.adapter.in.web;
 
 import com.luckytree.shop_service.common.dto.ResultResponse;
 import com.luckytree.shop_service.shop.application.port.in.GetShopListUseCase;
+import com.luckytree.shop_service.shop.domain.ShopDetail;
 import com.luckytree.shop_service.shop.domain.ShopSummary;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -33,5 +34,12 @@ public class GetShopListController {
     public ResultResponse getShopAll(@PathVariable("maxLat") double maxLat, @PathVariable("minLat") double minLat, @PathVariable("maxLng") double maxLng, @PathVariable("minLng") double minLng) {
         List<ShopSummary> shopSummary = getShopListUseCase.getShopAll(maxLat, minLat, maxLng, minLng);
         return new ResultResponse<>(shopSummary);
+    }
+
+    @Operation(summary = "선택된 샵 상세정보 검색")
+    @GetMapping("/{shopId}")
+    public ResultResponse getShopDetail(@PathVariable("shopId") Long shopId) {
+        ShopDetail shopDetail = getShopListUseCase.getShopDetail(shopId);
+        return new ResultResponse<>(shopDetail);
     }
 }
