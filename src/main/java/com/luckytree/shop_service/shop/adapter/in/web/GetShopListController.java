@@ -34,8 +34,8 @@ public class GetShopListController {
     }
 
     @Operation(summary = "특정 해쉬태크의 샵 상세정보 조회")
-    @GetMapping("/hashtag")
-    public ResultResponse getShopSummaryByHashtag(@RequestParam("hashtag") Hashtag hashtag) {
+    @GetMapping("hashtag/{hashtag}")
+    public ResultResponse getShopSummaryByHashtag(@PathVariable("hashtag") Hashtag hashtag) {
         List<ShopSummary> shopSummaryList = getShopListUseCase.getShopSummaryByHashtag(hashtag);
         return new ResultResponse<>(shopSummaryList);
     }
