@@ -7,7 +7,6 @@ import com.luckytree.shop_service.shop.domain.ShopSummary;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface GetShopListUseCase {
 
@@ -15,5 +14,5 @@ public interface GetShopListUseCase {
 
     List<ShopSummary> getShopAll(double maxLat, double minLat, double maxLng, double minLng);
 
-    ShopDetail getShopDetail(Long shopId);
+    ShopDetail getShopDetail(String name, String address);
 }
