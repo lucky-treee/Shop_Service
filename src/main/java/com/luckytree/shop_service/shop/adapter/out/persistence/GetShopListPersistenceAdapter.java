@@ -30,13 +30,7 @@ public class GetShopListPersistenceAdapter implements GetShopPort {
 
     @Override
     public ShopDetail getShopDetail(String name, String address){
-        Optional<ShopEntity> shopEntity = shopRepository.findByNameAndAddress(name, address);
-        if(shopEntity.isPresent()){
-            ShopDetail shopDetail = new ShopDetail(shopEntity.get());
-            return shopDetail;
-        }
-        else{
-            throw new NotFoundException("Shop not found");
-        }
+        ShopEntity shopEntity = shopRepository.findByNameAndAddress(name, address).orElseThrow(() -> new NotFoundException("해당 shopName과 address애 일치하는 ShopEntity가 없습니다. name: " + name + ", address: " + address));
+        return new ShopDetail(shopEntity);
     }
 }
