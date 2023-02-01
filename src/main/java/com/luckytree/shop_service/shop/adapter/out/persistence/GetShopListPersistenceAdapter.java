@@ -6,6 +6,7 @@ import com.luckytree.shop_service.shop.domain.ShopStatus;
 import com.luckytree.shop_service.shop.domain.ShopSummary;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+import org.webjars.NotFoundException;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,12 +29,14 @@ public class GetShopListPersistenceAdapter implements GetShopPort {
     }
 
     @Override
-    public ShopDetail getShopEntityById(Long shopId){
-        Optional<ShopEntity> shopEntity = shopRepository.findById(shopId);
+    public ShopDetail getShopDetail(String name, String address){
+        Optional<ShopEntity> shopEntity = shopRepository.findByNameAndAddress(name, address);
         if(shopEntity.isPresent()){
             ShopDetail shopDetail = new ShopDetail(shopEntity.get());
             return shopDetail;
         }
-        return null;
+        else{
+            throw new NotFoundException("Shop not found");
+        }
     }
 }
