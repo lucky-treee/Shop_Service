@@ -2,12 +2,15 @@ package com.luckytree.shop_service.shop.domain;
 
 import com.luckytree.shop_service.shop.adapter.out.persistence.BaseTimeEntity;
 import com.luckytree.shop_service.shop.adapter.out.persistence.ShopEntity;
-import lombok.Getter;
+import lombok.*;
 
 @Getter
-public class ShopSummary extends BaseTimeEntity {
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = false)
+@ToString
+public class ShopSummary {
 
-    private Long id;
     private String name;
     private ShopStatus status;
     private Double lat;
@@ -16,7 +19,6 @@ public class ShopSummary extends BaseTimeEntity {
     private Hashtag hashtag;
 
     public ShopSummary(ShopEntity shopEntity) {
-        this.id = shopEntity.getId();
         this.name = shopEntity.getName();
         this.status = shopEntity.getStatus();
         this.lat = shopEntity.getLat();

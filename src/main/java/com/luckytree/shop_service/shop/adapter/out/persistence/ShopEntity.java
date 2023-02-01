@@ -30,6 +30,7 @@ public class ShopEntity extends BaseTimeEntity {
     private String category;
 
     @Column(length = 10, nullable = false)
+    @Enumerated(value = EnumType.STRING)
     private ShopStatus status;
 
     @Column(length = 50, nullable = false)
@@ -42,6 +43,7 @@ public class ShopEntity extends BaseTimeEntity {
     private double lng;
 
     @Column(length = 50)
+    @Enumerated(value = EnumType.STRING)
     private Hashtag hashtag;
 
     @Column(length = 150)
