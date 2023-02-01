@@ -38,7 +38,7 @@ public class GetShopListController {
     }
 
     @Operation(summary = "선택된 샵 상세정보 검색")
-    @GetMapping("/getShopDetail/{id}")
+    @GetMapping("/detail/{id}")
     public ResultResponse getShopDetail(@PathVariable("id") Long shopId) {
         ShopTempEntity shopTempEntity = getShopListUseCase.getShopDetail(shopId);
         ShopDetail shopDetail = new ShopDetail(shopTempEntity);
