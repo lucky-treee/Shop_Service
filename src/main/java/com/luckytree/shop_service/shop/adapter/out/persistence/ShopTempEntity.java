@@ -36,6 +36,7 @@ public class ShopTempEntity extends BaseTimeEntity {
     private Double lng;
 
     @Column(length = 50)
+    @Enumerated(value = EnumType.STRING)
     private Hashtag hashtag;
 
     @Column(length = 150)

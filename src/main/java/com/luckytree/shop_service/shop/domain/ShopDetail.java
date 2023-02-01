@@ -1,16 +1,18 @@
 package com.luckytree.shop_service.shop.domain;
 
 import com.luckytree.shop_service.shop.adapter.out.persistence.ShopEntity;
-import lombok.Getter;
+import lombok.*;
 
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = false)
+@ToString
 public class ShopDetail{
 
-    private Long id;
     private String shopName;
     private String category;
     private Hashtag hashTag;
-    private ShopStatus status;
     private String shopAddress;
     private String photo;
     private String contact;
@@ -24,7 +26,6 @@ public class ShopDetail{
     private String holiday;
 
     public ShopDetail(ShopEntity shopEntity){
-        this.id = shopEntity.getId();
         this.shopName = shopEntity.getName();
         this.category = shopEntity.getCategory();
         this.hashTag = shopEntity.getHashtag();
