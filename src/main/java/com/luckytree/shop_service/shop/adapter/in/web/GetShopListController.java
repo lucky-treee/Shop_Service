@@ -1,8 +1,11 @@
 package com.luckytree.shop_service.shop.adapter.in.web;
 
 import com.luckytree.shop_service.common.dto.ResultResponse;
+import com.luckytree.shop_service.shop.adapter.out.persistence.ShopEntity;
+import com.luckytree.shop_service.shop.adapter.out.persistence.ShopTempEntity;
 import com.luckytree.shop_service.shop.application.port.in.GetShopListUseCase;
 import com.luckytree.shop_service.shop.domain.Hashtag;
+import com.luckytree.shop_service.shop.domain.ShopDetail;
 import com.luckytree.shop_service.shop.domain.ShopSummary;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -31,6 +34,13 @@ public class GetShopListController {
     public ResultResponse getShopAll(@PathVariable("maxLat") double maxLat, @PathVariable("minLat") double minLat, @PathVariable("maxLng") double maxLng, @PathVariable("minLng") double minLng) {
         List<ShopSummary> shopSummary = getShopListUseCase.getShopAll(maxLat, minLat, maxLng, minLng);
         return new ResultResponse<>(shopSummary);
+    }
+
+    @Operation(summary = "선택된 샵 상세정보 검색")
+    @GetMapping("/detail/{name}/{address}")
+    public ResultResponse getShopDetail(@PathVariable("name") String name, @PathVariable("address") String address) {
+        ShopDetail shopDetail = getShopListUseCase.getShopDetail(name, address);
+        return new ResultResponse<>(shopDetail);
     }
 
     @Operation(summary = "특정 해쉬태크의 샵 상세정보 조회")
