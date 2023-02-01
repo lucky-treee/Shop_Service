@@ -11,5 +11,6 @@ public interface GetShopPort {
      List<ShopSummary> getShopSummaryByCategory(String category);
 
      List<ShopSummary> getShopAll(double maxLat, double minLat, double maxLng, double minLng);
-     ShopDetail getShopEntityById(Long shopId);
+
+     ShopDetail getShopDetail(String name, String address);
 }

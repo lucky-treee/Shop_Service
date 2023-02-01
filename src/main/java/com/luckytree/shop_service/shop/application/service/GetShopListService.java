@@ -31,7 +31,7 @@ public class GetShopListService implements GetShopListUseCase {
 
     @Transactional(readOnly = true)
     @Override
-    public ShopDetail getShopDetail(Long shopId) {
-        return getShopPort.getShopEntityById(shopId);
+    public ShopDetail getShopDetail(String name, String address) {
+        return getShopPort.getShopDetail(name, address);
     }
 }
