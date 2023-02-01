@@ -6,5 +6,4 @@ import java.util.Optional;
 
 public interface ShopTempRepository extends JpaRepository<ShopTempEntity, Long> {
 
-    Optional<ShopTempEntity> findById(Long ShopId);
 }
