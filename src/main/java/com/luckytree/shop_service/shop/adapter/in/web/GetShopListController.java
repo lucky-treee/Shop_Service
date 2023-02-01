@@ -39,9 +39,9 @@ public class GetShopListController {
     }
 
     @Operation(summary = "선택된 샵 상세정보 검색")
-    @GetMapping("/detail/{id}")
-    public ResultResponse getShopDetail(@PathVariable("id") Long shopId) {
-        ShopDetail shopDetail = getShopListUseCase.getShopDetail(shopId);
+    @GetMapping("/detail/{name}/{address}")
+    public ResultResponse getShopDetail(@PathVariable("name") String name, @PathVariable("address") String address) {
+        ShopDetail shopDetail = getShopListUseCase.getShopDetail(name, address);
         return new ResultResponse<>(shopDetail);
     }
 }

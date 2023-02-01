@@ -12,5 +12,5 @@ public interface ShopRepository extends JpaRepository<ShopEntity, Long> {
 
     List<ShopEntity> findByStatusAndLatLessThanEqualAndLatGreaterThanEqualAndLngLessThanEqualAndLngGreaterThanEqual(ShopStatus shopStatus, double maxLat, double minLat, double maxLng, double minLng);
 
-    Optional<ShopEntity> findById(Long ShopId);
+    Optional<ShopEntity> findByNameAndAddress(String name, String address);
 }
