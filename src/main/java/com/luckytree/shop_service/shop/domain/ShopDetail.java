@@ -1,11 +1,10 @@
 package com.luckytree.shop_service.shop.domain;
 
-import com.luckytree.shop_service.shop.adapter.out.persistence.BaseTimeEntity;
-import com.luckytree.shop_service.shop.adapter.out.persistence.ShopTempEntity;
+import com.luckytree.shop_service.shop.adapter.out.persistence.ShopEntity;
 import lombok.Getter;
 
 @Getter
-public class ShopDetail extends BaseTimeEntity {
+public class ShopDetail{
 
     private Long id;
     private String shopName;
@@ -24,21 +23,21 @@ public class ShopDetail extends BaseTimeEntity {
     private  String operationEnd;
     private String holiday;
 
-    public ShopDetail(ShopTempEntity shopTempEntity){
-        this.id = shopTempEntity.getId();
-        this.shopName = shopTempEntity.getName();
-        this.category = shopTempEntity.getCategory();
-        this.hashTag = shopTempEntity.getHashtag();
-        this.shopAddress = shopTempEntity.getAddress();
-        this.photo = shopTempEntity.getPhoto();
-        this.contact = shopTempEntity.getContact();
-        this.homepage = shopTempEntity.getHomepage();
-        this.flagshipProduct = shopTempEntity.getFlagshipProduct();
-        this.sns = shopTempEntity.getSns();
-        this.lat = shopTempEntity.getLat();
-        this.lng = shopTempEntity.getLng();
-        this.operatingStart = shopTempEntity.getOperatingStart().toString();
-        this.operationEnd = shopTempEntity.getOperatingEnd().toString();
-        this.holiday = shopTempEntity.getHoliday();
+    public ShopDetail(ShopEntity shopEntity){
+        this.id = shopEntity.getId();
+        this.shopName = shopEntity.getName();
+        this.category = shopEntity.getCategory();
+        this.hashTag = shopEntity.getHashtag();
+        this.shopAddress = shopEntity.getAddress();
+        this.photo = shopEntity.getPhoto();
+        this.contact = shopEntity.getContact();
+        this.homepage = shopEntity.getHomepage();
+        this.flagshipProduct = shopEntity.getFlagshipProduct();
+        this.sns = shopEntity.getSns();
+        this.lat = shopEntity.getLat();
+        this.lng = shopEntity.getLng();
+        this.operatingStart = shopEntity.getOperatingStart().toString();
+        this.operationEnd = shopEntity.getOperatingEnd().toString();
+        this.holiday = shopEntity.getHoliday();
     }
 }
