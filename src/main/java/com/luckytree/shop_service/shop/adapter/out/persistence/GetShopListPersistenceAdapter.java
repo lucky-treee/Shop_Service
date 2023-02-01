@@ -28,8 +28,12 @@ public class GetShopListPersistenceAdapter implements GetShopPort {
     }
 
     @Override
-    public ShopTempEntity getShopTempEntityById(Long shopId){
-        Optional<ShopTempEntity> shopTempEntity = shopTempRepository.findById(shopId);
-        return shopTempEntity.get();
+    public ShopDetail getShopEntityById(Long shopId){
+        Optional<ShopEntity> shopEntity = shopRepository.findById(shopId);
+        if(shopEntity.isPresent()){
+            ShopDetail shopDetail = new ShopDetail(shopEntity.get());
+            return shopDetail;
+        }
+        return null;
     }
 }
