@@ -30,18 +30,20 @@ public class ShopEntity extends BaseTimeEntity {
     private String category;
 
     @Column(length = 10, nullable = false)
+    @Enumerated(value = EnumType.STRING)
     private ShopStatus status;
 
     @Column(length = 50, nullable = false)
     private String address;
 
-    @Column(name = "map_x", nullable = false)
-    private Double mapX;
+    @Column(nullable = false)
+    private double lat;
 
-    @Column(name = "map_y", nullable = false)
-    private Double mapY;
+    @Column(nullable = false)
+    private double lng;
 
     @Column(length = 50)
+    @Enumerated(value = EnumType.STRING)
     private Hashtag hashtag;
 
     @Column(length = 150)
@@ -80,8 +82,8 @@ public class ShopEntity extends BaseTimeEntity {
         this.category = shopRequest.getCategory();
         this.status = ShopStatus.DISABLE;
         this.address = shopRequest.getAddress();
-        this.mapX = shopRequest.getMapX();
-        this.mapY = shopRequest.getMapY();
+        this.lat = shopRequest.getLat();
+        this.lng = shopRequest.getLng();
         this.photo = shopRequest.getPhoto();
         this.contact = shopRequest.getContact();
         this.sns = shopRequest.getSns();
