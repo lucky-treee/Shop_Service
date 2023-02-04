@@ -11,7 +11,7 @@ public class RemoveShopPersistenceAdapter implements RemoveShopPort {
     private final ShopRemoveRepository shopRemoveRepository;
 
     @Override
-    public void saveRemoveRequest(Long shopId, String commmet) {
-        shopRemoveRepository.save(new ShopRemoveEntity(shopId, commmet));
+    public void saveRemoveRequest(Long shopId, String comment) {
+        shopRemoveRepository.save(new ShopRemoveEntity(shopId, comment));
     }
 }
