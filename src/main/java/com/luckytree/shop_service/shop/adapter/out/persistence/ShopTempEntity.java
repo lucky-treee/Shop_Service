@@ -21,9 +21,6 @@ public class ShopTempEntity extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="shop_id", nullable = false)
-    private Long shopId;
-
     @Column(length = 50, nullable = false)
     private String name;
 
@@ -72,7 +69,6 @@ public class ShopTempEntity extends BaseTimeEntity {
     private ShopEntity shopEntity;
 
     public ShopTempEntity(ShopRequest shopRequest, Long shopId) {
-        this.shopId = shopId;
         this.name = shopRequest.getShopName();
         this.category = shopRequest.getCategory();
         this.address = shopRequest.getAddress();
