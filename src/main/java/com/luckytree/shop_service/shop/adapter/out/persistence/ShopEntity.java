@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalTime;
 import java.util.List;
-import java.util.Set;
 
 @Table(name = "shop")
 @Getter
@@ -75,7 +74,7 @@ public class ShopEntity extends BaseTimeEntity {
     private List<ShopTempEntity> shopTempEntityList;
 
     @OneToMany(mappedBy = "shopEntity")
-    private Set<ShopRemoveEntity> shopRemoveEntityList;
+    private List<ShopRemoveEntity> shopRemoveEntityList;
 
 
     public ShopEntity(ShopRequest shopRequest) {
